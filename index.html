@@ -1,166 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Page Under Maintenance</title>
-  <meta name="description" content="Maintenance page with hacker/programmer vibe." />
-  <style>
-    :root{
-      --bg: 0 0% 0%; /* black */
-      --text: 120 10% 90%; /* off-white */
-      --accent1: 39 100% 50%; /* orange */
-      --accent2: 50 100% 50%; /* yellow */
-      --accent3: 0 100% 50%; /* red */
-    }
-    html,body{height:100%;margin:0;background:#000;font-family:ui-monospace,monospace;color:hsl(var(--text));overflow:hidden;}
-    *{box-sizing:border-box}
-
-    /* matrix rain background */
-    .matrix {
-      position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.12;
-    }
-
-    .center {
-      position:relative;z-index:2;min-height:100vh;display:grid;place-items:center;padding:2rem;
-    }
-
-    .panel{
-      width:min(900px,96%);
-      border-radius:10px;padding:1.6rem 1.8rem;background:rgba(0,0,0,0.55);
-      border:1px solid rgba(255,255,255,0.06);
-      box-shadow:0 8px 40px rgba(0,0,0,.7);
-      backdrop-filter:blur(6px);
-      text-align:center;
-    }
-
-    .header{display:flex;align-items:center;gap:1rem;justify-content:center;flex-wrap:wrap}
-    .logo{width:56px;height:56px;border-radius:8px;background:linear-gradient(135deg,hsl(var(--accent1)),hsl(var(--accent2)));display:grid;place-items:center;color:#000;font-weight:800}
-
-    .title{font-size:clamp(1.6rem,2.6vw,2.6rem);letter-spacing:1px;color:hsl(var(--text));margin-top:1rem}
-    .subtitle{color:hsla(120,10%,80%,.8);font-size:.95rem;margin-top:.35rem}
-
-    /* console style */
-    .console {
-      background:rgba(0,0,0,0.85);
-      color:#00ff66;
-      font-size:0.9rem;
-      text-align:left;
-      padding:1rem;
-      margin:1.5rem auto;
-      border-radius:6px;
-      height:220px;
-      overflow:hidden;
-      white-space:pre-line;
-      font-family:monospace;
-      box-shadow:inset 0 0 10px rgba(0,255,100,.2);
-    }
-
-    .progress{height:12px;border-radius:999px;background:#111;margin-top:1.5rem;overflow:hidden;border:1px solid rgba(255,255,255,.04)}
-    .progress > i{display:block;height:100%;width:0;background:linear-gradient(90deg,hsl(var(--accent1)),hsl(var(--accent2)),hsl(var(--accent3)));animation:prog 6s linear infinite}
-    @keyframes prog{0%{width:0%}50%{width:64%}100%{width:0%}}
-
-    .blink { animation: blink 1s step-start infinite; }
-    @keyframes blink { 50% { opacity: 0; } }
-
-    /* LinkedIn button */
-    .linkedin-btn {
-      margin-top: 1.5rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: #0A66C2;
-      color: #fff;
-      font-size: 0.9rem;
-      font-weight: 600;
-      text-decoration: none;
-      padding: 0.6rem 1rem;
-      border-radius: 6px;
-      transition: background 0.3s ease;
-    }
-    .linkedin-btn:hover {
-      background: #004182;
-    }
-    .linkedin-btn svg {
-      width: 16px;
-      height: 16px;
-      fill: #fff;
-    }
-
-    /* Responsive tweaks */
-    @media (max-width: 480px){
-      .console{font-size:0.8rem;height:180px;}
-      .logo{width:48px;height:48px;font-size:0.8rem;}
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Johnson Joy</title>
+    <link rel="icon" href="Favicon.png" type="image/png">
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 
+                (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anybody:ital,wght@0,100..900;1,100..900&family=Dancing+Script:wght@400..700&family=Dynalight&family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="matrix" aria-hidden="true"></div>
-  <div class="center">
-    <section class="panel" role="status" aria-live="polite">
-      <div class="header">
-        <div class="logo">OOPS!</div>
-      </div>
-      <div class="title">PAGE UNDER MAINTENANCE</div>
-      <div class="subtitle">Systems update in progress…</div>
-      <div class="console" id="console"></div>
-      <div class="progress" aria-hidden="false"><i></i></div>
-      <a class="linkedin-btn" href="https://www.linkedin.com/in/johnsonjoycs" target="_blank" rel="noopener">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.784 1.764-1.75 1.764zm13.5 11.268h-3v-5.604c0-1.337-.026-3.061-1.865-3.061-1.868 0-2.155 1.459-2.155 2.965v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.561 2.841-1.561 3.04 0 3.6 2.001 3.6 4.601v5.593z"/></svg>
-        LinkedIn
-      </a>
-    </section>
-  </div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Johnson Joy</div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#articles" class="nav-link active" data-page="articles">Articles</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#portfolio" class="nav-link" data-page="portfolio">Portfolio</a>
+                </li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
 
-  <script>
-    // Matrix rain effect
-    (function(){
-      const el=document.querySelector('.matrix');
-      const canvas=document.createElement('canvas');
-      canvas.width=window.innerWidth;canvas.height=window.innerHeight;el.appendChild(canvas);
-      const ctx=canvas.getContext('2d');
-      const chars='01';
-      const fontSize=14;ctx.font=fontSize+'px monospace';
-      const cols=Math.floor(canvas.width/fontSize);
-      const drops=new Array(cols).fill(1);
-      function draw(){
-        ctx.fillStyle='rgba(0,0,0,0.06)';ctx.fillRect(0,0,canvas.width,canvas.height);
-        ctx.fillStyle='rgba(0,255,150,0.08)';
-        for(let i=0;i<drops.length;i++){
-          const text=chars[Math.floor(Math.random()*chars.length)];
-          const x=i*fontSize;const y=drops[i]*fontSize;
-          ctx.fillText(text,x,y);
-          if(y>canvas.height && Math.random()>0.975) drops[i]=0; drops[i]++;
-        }
-        requestAnimationFrame(draw);
-      }
-      draw();
-      window.addEventListener('resize',()=>{canvas.width=window.innerWidth;canvas.height=window.innerHeight});
-    })();
+    <main>
+        <section id="articles" class="page active">
+            <div class="container">
+                <h1 class="page-title">Articles & Insights</h1>
+                <p class="page-subtitle">Thoughts on programming, security, and brand architecture</p>
+                
+                <div class="articles-grid">
+                    <!-- Article 1-->
+                    <article class="article-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1544890225-2f3faec4cd60?w=800&h=500&fit=crop" alt="Article image">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">How people’s locations are discovered through online links?</h3>
+                            <p class="card-description">A single click. That’s all it takes. One moment you’re opening a link. The next second someone knows where you are.</p>
+                            <a href="https://medium.com/@j0hns0nj0y/how-peoples-locations-are-discovered-through-online-links-8a58ed0e80d0" target="_blank" rel="noopener noreferrer" class="card-button">
+                                Read on Medium <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+                   
+                </div>
+            </div>
+        </section>
 
-    // Console typing simulation
-    const consoleEl=document.getElementById('console');
-    const lines=[
-      'Initializing system checks...',
-      'Loading core modules...',
-      'Establishing secure connections...',
-      'Fetching encrypted assets...',
-      'Performing database migrations...',
-      'System update in progress...',
-      'All services temporarily offline.',
-      'Rebooting soon...'
-    ];
-    let i=0;
-    function typeLine(){
-      if(i<lines.length){
-        consoleEl.innerHTML+=`$ ${lines[i]}\n`;
-        i++;
-        setTimeout(typeLine,1000);
-      } else {
-        consoleEl.innerHTML+='$ Awaiting completion <span class="blink">█</span>';
-      }
-    }
-    typeLine();
-  </script>
+        <section id="portfolio" class="page">
+            <div class="animated-background">
+                <div class="gradient-orb orb-1"></div>
+                <div class="gradient-orb orb-2"></div>
+                <div class="gradient-orb orb-3"></div>
+            </div>
+            
+            <div class="portfolio-content">
+                <h1 class="portfolio-name">Johnson Joy</h1>
+                <p class="portfolio-subtitle">Programmer | Hacker | Brand Architect | Insight Miner</p>
+                
+                <div class="social-links">
+                    <a href="https://github.com/J0hns0nJ0y" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/johnsonjoycs" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://drive.google.com/file/d/1vYjsMJf_7BjUYSlz6bQREajT4xvoe4dv/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="CV">
+                        <i class="fas fa-file-pdf"></i>
+                    </a>
+                    <a href="mailto:johnsonjoy.work@gmail.com" class="social-icon" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                
+                <div class="portfolio-footer">
+                    Johnson Joy / © 2025 J0hns0nJ0y / Version 0.030113PF03 / Custom Developed / MIT Licensed
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>

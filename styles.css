@@ -1,737 +1,546 @@
-.head{
-    font-family: "Dancing Script", cursive;
-    font-optical-sizing: auto;
-    font-style: normal;
-    text-align: center;
-    font-size: 60px;
-    padding-top: 200px;
-    padding-bottom: 170px;
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-card: #ffffff;
+    --text-primary: #1a1a1a;
+    --text-secondary: #4a5568;
+    --accent-primary: #6366f1;
+    --accent-secondary: #8b5cf6;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --border: #e9ecef;
+    --overlay: rgba(0, 0, 0, 0.5);
+    --glow-color: rgba(99, 102, 241, 0.4);
+    --bg-pattern: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
-.main{
-    font-family: "Geist Mono", monospace;
-    font-optical-sizing: auto;
-    font-style: normal;
-    text-align: justify;
-    font-size: 18px;
-    padding-left: 10px;
-    padding-right: 10px;
+[data-theme="dark"] {
+    --bg-primary: #0f0f0f;
+    --bg-secondary: #1a1a1a;
+    --bg-card: #1e1e1e;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --accent-primary: #818cf8;
+    --accent-secondary: #a78bfa;
+    --shadow: rgba(0, 0, 0, 0.3);
+    --border: #2a2a2a;
+    --overlay: rgba(0, 0, 0, 0.7);
+    --glow-color: rgba(129, 140, 248, 0.6);
+    --bg-pattern: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
-.mains-gif{
-    text-align: center;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.Am-head{
-    font-family: "Geist Mono", monospace;
-    font-optical-sizing: auto;
-    font-style: normal;
-    text-align: center;
-    font-size: 80px;
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
 }
 
-.Am-content{
-    font-family: "Geist Mono", monospace;
-    font-optical-sizing: auto;
-    font-style: normal;
-    text-align: justify;
-    font-size: 36px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-.image{
-    text-align: center;
-}
-
-.myself-pic{
-    width: 300px;
-    height: 350px;
-    float: right;
-    padding-left: 30px;
-    margin-left: 30px;
-}
-.button{
-    text-align: center;
-}
-
-.download-btn {
-    display: inline-flex; /* Align icon and text side by side */
-    align-items: center; /* Vertically center content */
-    justify-content: center; /* Center content horizontally */
-    padding: 10px 20px; /* Add space inside the button */
-    font-size: 70px; /* Font size */
-    font-family: Arial, sans-serif; /* Font family */
-    color: black; /* Text color */
-    background-color: white; /* Background color */
-    border: 2px solid black; /* Border */
-    border-radius: 5px; /* Rounded corners */
-    text-decoration: none; /* Remove underline */
-    cursor: pointer; /* Change cursor on hover */
-    transition: all 0.3s ease; /* Smooth hover effect */
-}
-
-.download-btn i {
-    margin-left: 10px; /* Space between text and icon */
-    font-size: 50px; /* Icon size */
-}
-
-/* Hover effect */
-.download-btn:hover {
-    background-color: black; /* Background becomes black */
-    color: white; /* Text and icon become white */
-    border-color: white; /* Border becomes white */
-}
-
-.Exp-head{
-    font-family: "Geist Mono", monospace;
-    font-optical-sizing: auto;
-    font-style: normal;
-    text-align: center;
-    font-size: 80px;
-}
-
-.exp-content{
-    font-family: "Geist Mono", monospace;
-    font-optical-sizing: auto;
-    font-style: normal;
-    text-align: justify;
-    font-size: 20px;
-    display:flex;
-    gap: 200px;
-    flex-direction: row;
-    justify-content: center;
-    border: 5px solid black;
-}
-
-.exp-content-aca{
-    font-family: "Geist Mono", monospace;
-    font-optical-sizing: auto;
-    font-style: normal;
-    text-align: justify;
-    font-size: 20px;
-    display:inline-flex;
-    gap: 100px;
-    flex-direction: row;
-    justify-content: center;
-    border: 5px solid black;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-.exp-sub-head{
-    text-decoration: underline;
-}
-
-.exp-texts{
-    font-size: 30px;
-}
-
-.skills-head{
-    font-family: "Geist Mono", monospace;
-    font-optical-sizing: auto;
-    font-style: normal;
-    text-align: center;
-    font-size: 80px;
-}
-
-.skills-content{
-    font-family: "Geist Mono", monospace;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-size: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-.skills-sub-head{
-    text-decoration: underline;
-}
-
-.skills-text{
-    font-size: 30px;
-}
-
-.Cert-head{
-    font-family: "Geist Mono", monospace;
-    font-optical-sizing: auto;
-    font-style: normal;
-    text-align: center;
-    font-size: 80px;
-}
-
-.cert-content{
-    font-family: "Geist Mono", monospace;
-    font-optical-sizing: auto;
-    font-style: normal;
-    text-align: justify;
-    font-size: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-.cert-sub-head{
-    text-decoration: underline;
-}
-
-.cert-texts{
-    font-size: 30px;
-}
-
-.cert-sub-head {
-    cursor: pointer;
-    color: black;
-    transition: color 0.3s ease;
-}
-
-.cert-sub-head:hover {
-    color: rgb(0, 255, 115);
-}
-
-/* Lightbox styles */
-.lightbox {
-    display: none; /* Hidden by default */
+.navbar {
     position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--bg-card);
+    box-shadow: 0 2px 10px var(--shadow);
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-family: "Dynalight", cursive;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-link.active {
+    color: var(--accent-primary);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    transition: width 0.3s ease;
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-link:hover {
+    color: var(--accent-primary);
+}
+
+.theme-toggle {
+    background: var(--bg-secondary);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background: var(--accent-primary);
+    color: white;
+    transform: scale(1.1);
+}
+
+main {
+    margin-top: 70px;
+}
+
+.page {
+    display: none;
+    min-height: calc(100vh - 70px);
+    position: absolute;
+    width: 100%;
+    top: 70px;
+    left: 0;
+}
+
+.page.active {
+    display: block;
+    position: relative;
+    top: 0;
+}
+
+#articles {
+    background-image: var(--bg-pattern);
+    background-color: var(--bg-primary);
+    position: relative;
+}
+
+#articles::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--bg-primary);
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.page-title {
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.page-subtitle {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+}
+
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.article-card {
+    background: var(--bg-card);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border);
+}
+
+.article-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 30px var(--shadow), 0 0 30px var(--glow-color);
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.article-card:hover .card-image img {
+    transform: scale(1.1);
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+}
+
+.card-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+}
+
+.card-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-button:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+}
+
+#portfolio {
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 70px);
+    overflow: hidden;
+}
+
+#portfolio.page.active {
+    display: flex;
+    position: relative;
+}
+
+.animated-background {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
-    justify-content: center;
-    align-items: center;
-    z-index: 1000; /* Place above other content */
+    overflow: hidden;
+    background: var(--bg-primary);
 }
 
-.lightbox img {
-    max-width: 90%;
-    max-height: 80%;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
-}
-
-.lightbox .close-btn {
+.gradient-orb {
     position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 30px;
-    color: white;
-    cursor: pointer;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.5;
+    animation: float 20s infinite ease-in-out;
 }
 
-.lightbox .close-btn:hover {
-    color: red;
+.orb-1 {
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    top: -100px;
+    left: -100px;
+    animation-delay: 0s;
 }
 
-/* Background blur effect */
-.blurred {
-    filter: blur(5px);
+.orb-2 {
+    width: 350px;
+    height: 350px;
+    background: linear-gradient(135deg, #ec4899, #f43f5e);
+    bottom: -100px;
+    right: -100px;
+    animation-delay: 7s;
 }
 
-.projects{
-    padding-bottom: 20px;
+.orb-3 {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, #06b6d4, #3b82f6);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-delay: 14s;
 }
 
-.footer{
-    background-color: black;
-    color: white;
-    font-family: "Geist Mono", monospace;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-size: 20px;
-    padding: 20px;
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    33% {
+        transform: translate(50px, -50px) scale(1.1);
+    }
+    66% {
+        transform: translate(-50px, 50px) scale(0.9);
+    }
 }
 
-.linkedin a {
-    text-decoration: none; /* Remove underline */
-    color: inherit; /* Inherit color from the parent */
-}
-
-.linkedin a:hover {
-    color: rgb(0, 255, 115);
-}
-
-.projects-gif{
+.portfolio-content {
+    position: relative;
+    z-index: 10;
     text-align: center;
+    padding: 2rem;
 }
 
-.prj-gif{
-    width: 650px;
-    height: 500px;
+.portfolio-name {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: fadeInUp 1s ease;
 }
 
-/* Samsung Phones */
-/* Galaxy S Series */
-@media screen and (width: 360px) { /* Galaxy S8, S9, S10 */
-    /* Styles for earlier Galaxy S models */
-    .head{
-        font-size: 40px;
-        padding-top: 100px;
-        padding-bottom: 100px;
-        padding-left: 20px;
-        padding-right: 20px;
+.portfolio-subtitle {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 3rem;
+    font-weight: 400;
+    animation: fadeInUp 1s ease 0.2s backwards;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+    animation: fadeInUp 1s ease 0.4s backwards;
+}
+
+.social-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-card);
+    border-radius: 50%;
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid var(--border);
+}
+
+.social-icon:hover {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px var(--shadow);
+}
+
+.portfolio-footer {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    animation: fadeIn 1s ease 0.6s backwards;
+    text-align: center;
+    max-width: 90%;
+    line-height: 1.4;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
     }
-    .main{
-        font-size: 10px;
-        text-align:justify;
-        padding-left:0px;
-        padding-right:0px;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
-    #mains-gif{
-        width: 350px;
-        height: 200px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 1rem;
     }
 
-    .Am-head{
-        text-align: center;
-        font-size: 39px;
-    }
-     
-    .Am-content{
-        text-align: justify;
-        font-size: 20px;
-        padding-left: 0px;
-        padding-right: 0px;
-    }
-    
-    .image{
-        text-align: center;
-    }
-    
-    .myself-pic{
-        width: 300px;
-        height: 350px;
-        border-bottom: 3px solid black;
-        border-radius: 3px;
-        padding-left: 30px;
-        margin-left: 30px;
-        margin-bottom: 30px;
+    .nav-menu {
+        gap: 1rem;
     }
 
-    .button{
-        text-align: center;
-    }
-    
-    .download-btn {
-        display: inline-flex; /* Align icon and text side by side */
-        align-items: center; /* Vertically center content */
-        justify-content: center; /* Center content horizontally */
-        padding: 10px 20px; /* Add space inside the button */
-        font-size: 40px; /* Font size */
-        font-family: Arial, sans-serif; /* Font family */
-        color: black; /* Text color */
-        background-color: white; /* Background color */
-        border: 2px solid black; /* Border */
-        border-radius: 5px; /* Rounded corners */
-        text-decoration: none; /* Remove underline */
-        cursor: pointer; /* Change cursor on hover */
-        transition: all 0.3s ease; /* Smooth hover effect */
-    }
-    
-    .download-btn i {
-        margin-left: 10px; /* Space between text and icon */
-        font-size: 40px; /* Icon size */
+    .page-title {
+        font-size: 2.2rem;
     }
 
-    .Exp-head{
-        font-size: 39px;
+    .page-subtitle {
+        font-size: 1.15rem;
     }
 
-    .exp-content{
-        font-family: "Geist Mono", monospace;
-        font-optical-sizing: auto;
-        font-style: normal;
-        text-align: justify;
-        font-size: 15px;
-        display:flex;
-        gap: 3px;
-        flex-direction: column-reverse;
-        justify-content: center;
-        border: 5px solid black;
-    }
-    
-    .exp-content-aca{
-        font-family: "Geist Mono", monospace;
-        font-optical-sizing: auto;
-        font-style: normal;
-        text-align: justify;
-        font-size: 15px;
-        display:flex;
-        gap: 3px;
-        flex-direction: column-reverse;
-        justify-content: center;
-        border: 5px solid black;
+    .card-title {
+        font-size: 1.4rem;
     }
 
-    .exp-sub-head{
-        text-decoration: underline;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-    
-    .exp-texts{
-        font-size: 20px;
-        padding-left: 5px;
-        padding-right: 5px;
+    .card-description {
+        font-size: 1.1rem;
     }
 
-    .skills-head{
-       font-size: 39px;
+    .card-button {
+        font-size: 1rem;
     }
 
-    .skills-content{
-        font-size: 15px;
-        padding-left: 10px;
-        padding-right: 10px;
+    .articles-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
-    .skills-sub-head{
-        text-decoration: underline;
-        font-size:28px;
+    .portfolio-name {
+        font-size: 2.5rem;
     }
 
-    .skills-text{
-        font-size: 20px;
+    .portfolio-subtitle {
+        font-size: 1.25rem;
+        padding: 0 1rem;
     }
 
-    .Cert-head{
-        font-size: 39px;
+    .social-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 1.4rem;
     }
-    
-    .cert-content{
-        text-align: justify;
-        font-size: 15px;
-    }
-    
-    .cert-sub-head{
-        font-size: 28px;
-    }
-    
-    .cert-texts{
-        font-size: 20px;
-    }
-    
-    .lightbox {
-        display: none; /* Hidden by default */
+
+    .portfolio-footer {
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
-        justify-content: center;
-        padding-left: 10px;
-        align-items: center;
-        z-index: 1000; /* Place above other content */
-    }
-    
-    .lightbox img {
-        max-width: 80%; /* Use more screen width */
-        max-height: 70%; 
-    }
-    
-    .lightbox .close-btn {
-        position: absolute;
-        top: 50px; /* Position it slightly above the image */
-        right: 50px; /* Align it near the top-right corner of the image */
-        font-size: 30px;
-        color: white;
-        cursor: pointer;
-        z-index: 1000; /* Ensure it stays above the image */
-    }
-
-    .prj-gif{
-        width: 350px;
-        height: 270px;
-    }
-
-    .footer{
-        font-size: 15px;
-        padding: 20px;
-    }   
-}
-@media screen and (width: 393px) { /* Galaxy S20, S21 */
-    /* Styles for mid-range Galaxy S models */
-}
-@media screen and (width: 412px) { /* Galaxy S22, S23 */
-    /* Styles for newer Galaxy S models */
-}
-
-/* Samsung Galaxy A Series */
-@media screen and (width: 360px) { /* Galaxy A50, A51 */
-    /* Styles for Galaxy A50 series */
-}
-@media screen and (width: 384px) { /* Galaxy A70, A71 */
-    /* Styles for larger Galaxy A models */
-}
-
-/* Samsung Galaxy M Series */
-@media screen and (width: 360px) { /* Galaxy M30, M31 */
-    /* Styles for Galaxy M series */
-}
-@media screen and (width: 412px) { /* Galaxy M51, M52 */
-    /* Styles for newer Galaxy M models */
-}
-
-/* iPhone Models */
-@media screen and (width: 320px) { /* iPhone 5, SE (1st gen) */
-    /* Styles for smaller iPhone models */
-}
-@media screen and (width: 375px) { /* iPhone 6/7/8, X */
-    /* Styles for standard iPhone models */
-}
-@media screen and (width: 390px) { /* iPhone 12, 13 */
-    /* Styles for newer standard iPhones */
-}
-@media screen and (width: 393px) { /* iPhone 14, 15 */
-    /* Styles for latest standard iPhones */
-}
-@media screen and (width: 414px) { /* iPhone 6/7/8 Plus, XS Max */
-    /* Styles for Plus-sized iPhones */
-}
-@media screen and (width: 428px) { /* iPhone 12/13 Pro Max */
-    /* Styles for largest iPhone Pro Max models */
-}
-@media screen and (width: 430px) { /* iPhone 14/15 Pro Max */
-    /* Styles for latest Pro Max models */
-}
-
-/* Redmi Phones */
-@media screen and (width: 360px) { /* Redmi Note 8, Note 9 */
-    /* Styles for earlier Redmi Note models */
-}
-@media screen and (width: 393px) { /* Redmi Note 10, Note 11 */
-    /* Styles for mid-range Redmi Note models */
-}
-@media screen and (width: 412px) { /* Redmi Note 12 */
-    /* Styles for newer Redmi Note models */
-}
-
-/* Oppo Phones */
-@media screen and (width: 360px) { /* Oppo A53, A54 */
-    /* Styles for earlier Oppo A series */
-}
-@media screen and (width: 384px) { /* Oppo A72, A91 */
-    /* Styles for mid-range Oppo A models */
-}
-@media screen and (width: 412px) { /* Oppo Reno series */
-    /* Styles for Oppo Reno models */
-}
-
-/* Vivo Phones */
-@media screen and (width: 360px) { /* Vivo Y series */
-    /* Styles for earlier Vivo Y models */
-}
-@media screen and (width: 393px) { /* Vivo V series */
-    /* Styles for Vivo V series */
-}
-@media screen and (width: 412px) { /* Vivo X series */
-    /* Styles for Vivo X series */
-}
-
-/* Universal Mobile Catch-All set it as max-width*/
-@media screen and (width: 480px) { /* Galaxy S8, S9, S10 */
-    /* Styles for earlier Galaxy S models */
-    .head{
-        font-size: 40px;
-        padding-top: 150px;
-        padding-bottom: 150px;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-    .main{
-        font-size: 10px;
-        text-align:justify;
-        padding-left:0px;
-        padding-right:0px;
-    }
-    #mains-gif{
-        width: 350px;
-        height: 200px;
-    }
-
-    .Am-head{
+        bottom: 1.5rem;
+        left: 50%;
+        transform: translateX(-50%);
         text-align: center;
-        font-size: 39px;
+        font-size: 0.95rem;
     }
-     
-    .Am-content{
-        text-align: justify;
-        font-size: 20px;
-        padding-left: 0px;
-        padding-right: 0px;
+
+    .gradient-orb {
+        filter: blur(60px);
     }
-    
-    .image{
-        text-align: center;
+
+    .orb-1 {
+        width: 250px;
+        height: 250px;
     }
-    
-    .myself-pic{
+
+    .orb-2 {
         width: 200px;
-        height: 240px;
-        border-bottom: 3px solid black;
-        border-radius: 3px;
-        padding-left: 30px;
-        margin-left: 30px;
-        margin-bottom: 10px;
+        height: 200px;
     }
 
-    .button{
-        text-align: center;
+    .orb-3 {
+        width: 180px;
+        height: 180px;
     }
-    
-    .download-btn {
-        display: inline-flex; /* Align icon and text side by side */
-        align-items: center; /* Vertically center content */
-        justify-content: center; /* Center content horizontally */
-        padding: 10px 20px; /* Add space inside the button */
-        font-size: 40px; /* Font size */
-        font-family: Arial, sans-serif; /* Font family */
-        color: black; /* Text color */
-        background-color: white; /* Background color */
-        border: 2px solid black; /* Border */
-        border-radius: 5px; /* Rounded corners */
-        text-decoration: none; /* Remove underline */
-        cursor: pointer; /* Change cursor on hover */
-        transition: all 0.3s ease; /* Smooth hover effect */
-    }
-    
-    .download-btn i {
-        margin-left: 10px; /* Space between text and icon */
-        font-size: 40px; /* Icon size */
+}
+
+@media (max-width: 480px) {
+    .nav-logo {
+        font-size: 1.1rem;
     }
 
-    .Exp-head{
-        font-size: 39px;
+    .page-title {
+        font-size: 1.9rem;
     }
 
-    .exp-content{
-        font-family: "Geist Mono", monospace;
-        font-optical-sizing: auto;
-        font-style: normal;
-        text-align: justify;
-        font-size: 15px;
-        display:flex;
-        gap: 3px;
-        flex-direction: column-reverse;
-        justify-content: center;
-        border: 5px solid black;
+    .page-subtitle {
+        font-size: 1.05rem;
     }
 
-    .exp-content-aca{
-        font-family: "Geist Mono", monospace;
-        font-optical-sizing: auto;
-        font-style: normal;
-        text-align: justify;
-        font-size: 15px;
-        display:flex;
-        gap: 3px;
-        flex-direction: column-reverse;
-        justify-content: center;
-        border: 5px solid black;
-    }
-    
-    .exp-sub-head{
-        text-decoration: underline;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-    
-    .exp-texts{
-        font-size: 20px;
-        padding-left: 5px;
-        padding-right: 5px;
+    .portfolio-name {
+        font-size: 2rem;
     }
 
-    .skills-head{
-       font-size: 39px;
+    .portfolio-subtitle {
+        font-size: 1.1rem;
     }
 
-    .skills-content{
-        font-size: 15px;
-        padding-left: 10px;
-        padding-right: 10px;
+    .social-links {
+        gap: 1rem;
     }
 
-    .skills-sub-head{
-        text-decoration: underline;
-        font-size:28px;
+    .social-icon {
+        width: 52px;
+        height: 52px;
+        font-size: 1.3rem;
     }
 
-    .skills-text{
-        font-size: 20px;
+    .container {
+        padding: 2rem 1rem;
     }
 
-    .Cert-head{
-        font-size: 39px;
-    }
-    
-    .cert-content{
-        text-align: justify;
-        font-size: 15px;
-    }
-    
-    .cert-sub-head{
-        font-size: 28px;
-    }
-    
-    .cert-texts{
-        font-size: 20px;
-    }
-    
-    .lightbox {
-        display: none; /* Hidden by default */
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
-        justify-content: center;
-        padding-left: 10px;
-        align-items: center;
-        z-index: 1000; /* Place above other content */
-    }
-    
-    .lightbox img {
-        max-width: 80%; /* Use more screen width */
-        max-height: 70%; 
-    }
-    
-    .lightbox .close-btn {
-        position: absolute;
-        top: 50px; /* Position it slightly above the image */
-        right: 50px; /* Align it near the top-right corner of the image */
-        font-size: 30px;
-        color: white;
-        cursor: pointer;
-        z-index: 1000; /* Ensure it stays above the image */
-    }
-    
-    .lightbox .close-btn:hover {
-        color: red;
-    }
-    
-    /* Background blur effect */
-    .blurred {
-        filter: blur(5px);
-    }
-
-    .prj-gif{
-        width: 350px;
-        height: 270px;
-    }
-
-    .footer{
-        font-size: 15px;
-        padding: 20px;
-    }
-    
-    .linkedin a {
-        text-decoration: none; /* Remove underline */
-        color: inherit; /* Inherit color from the parent */
-    }
-    
-    .linkedin a:hover {
-        color: rgb(0, 255, 115);
+    .portfolio-footer {
+        font-size: 0.9rem;
+        bottom: 1rem;
     }
 }

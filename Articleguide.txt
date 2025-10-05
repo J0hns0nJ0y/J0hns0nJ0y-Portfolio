@@ -1,0 +1,53 @@
+The following are just Article reference codes to be updated into index.html page.
+
+Guide:
+- For the image in unsplash
+1. Select the image you like in unsplash
+2. Open that image in new tab
+3. Copy the link until "?" . Exclude the question mark coz we have our inputs
+4. Paste that link before "?w=800&h=500&fit=crop"    
+
++----------------------------------------------+
+| Refer the syntax below, Incase of emergency: |
++----------------------------------------------+
+
+
+                <!-- Article 2-->
+                  <article class="article-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=500&fit=crop" alt="Article image">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Modern Web Development Best Practices</h3>
+                            <p class="card-description">Exploring the latest trends and techniques in web development. From responsive design to performance optimization.</p>
+                            <a href="https://medium.com/@yourprofile/article-2" target="_blank" rel="noopener noreferrer" class="card-button">
+                                Read on Medium <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+                    <!-- Article 3-->
+                    <article class="article-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop" alt="Article image">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Building a Strong Brand Identity</h3>
+                            <p class="card-description">Key principles and strategies for creating a memorable brand that resonates with your target audience.</p>
+                            <a href="https://medium.com/@yourprofile/article-3" target="_blank" rel="noopener noreferrer" class="card-button">
+                                Read on Medium <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+                    <!-- Article 4-->
+                    <article class="article-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=500&fit=crop" alt="Article image">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Data Analysis for Decision Making</h3>
+                            <p class="card-description">How to leverage data insights to make informed business decisions and drive growth in your organization.</p>
+                            <a href="https://medium.com/@yourprofile/article-4" target="_blank" rel="noopener noreferrer" class="card-button">
+                                Read on Medium <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
